@@ -1046,7 +1046,6 @@ ximopen(Display *dpy)
 		xw.ime.xic = XCreateIC(xw.ime.xim, XNInputStyle,
 		                       XIMPreeditNothing | XIMStatusNothing,
 		                       XNClientWindow, xw.win,
-		                       XNFocusWindow, xw.win,
 		                       XNDestroyCallback, &icdestroy,
 		                       NULL);
 	}
