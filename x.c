@@ -880,10 +880,9 @@ xloadfont(Font *f, FcPattern *pattern)
 		}
 	}
 
-	if ((XftPatternGetInteger(pattern, "weight", 0, &wantattr) ==
-	    XftResultMatch)) {
-		if ((XftPatternGetInteger(f->match->pattern, "weight", 0,
-		    &haveattr) != XftResultMatch) || haveattr != wantattr) {
+	int weight_tolerance = 20;
+	if ((XftPatternGetInteger(pattern, "weight", 0, &wantattr) == XftResultMatch)) {
+		if ((XftPatternGetInteger(f->match->pattern, "weight", 0, &haveattr) != XftResultMatch) || abs(haveattr - wantattr) > weight_tolerance) {
 			f->badweight = 1;
 			fputs("font weight does not match\n", stderr);
 		}
