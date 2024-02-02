@@ -96,30 +96,28 @@ unsigned int tabspaces = 8;
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
 	/* 8 normal colors */
-	"#323b44",
-	"#8c4b4b",
-	"#4b8c4b",
-	"#8c8c4b",
-	"#4b4b8c",
-	"#8c4b8c",
-	"#4b8c8c",
-	"#818a94",
+	[0] = "#323b44",  /* black */
+	[1] = "#8c4b4b",  /* red */
+	[2] = "#4b8c4b",  /* green */
+	[3] = "#8c8c4b",  /* yellow */
+	[4] = "#4b4b8c",  /* blue */
+	[5] = "#8c4b8c",  /* magenta */
+	[6] = "#4b8c8c",  /* cyan */
+	[7] = "#818a94",  /* white */
 
 	/* 8 bright colors */
-	"#464f58",
-	"#8c4b4b",
-	"#4b8c4b",
-	"#8c8c4b",
-	"#4b4b8c",
-	"#8c4b8c",
-	"#4b8c8c",
-	"#9aa4ad",
+	[8] = "#464f58",  /* black_bright */
+	[9] = "#a65858",  /* red_bright */
+	[10] = "#58a658",  /* green_bright */
+	[11] = "#a6a658",  /* yellow_bright */
+	[12] = "#5858a6",  /* blue_bright */
+	[13] = "#a658a6",  /* magenta_bright */
+	[14] = "#58a6a6",  /* cyan_bright */
+	[15] = "#9aa4ad",  /* white_bright */
 
-	[255] = 0,
-
-	/* more colors can be added after 255 to use with DefaultXX */
+	/* special colors */
 	[256] = "#101f2f",  /* background */
-	[257] = "#80aad5",  /* foregroud */
+	[257] = "#80aad5",  /* foreground */
 
 	[258] = "#cccccc",  /* cursor */
 	[259] = "#555555",  /* reverse cursor */
